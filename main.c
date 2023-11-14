@@ -39,7 +39,7 @@ int main()
         switch (opcion)
         {
         case 0:
-            printf("\nHas elegido salir. Adi贸s!\n");
+            printf("\nHas elegido salir. Adi髎!\n");
             break;
         case 1:
             printf("\nHas elegido realizar una tirada.\n");
@@ -52,10 +52,10 @@ int main()
         case 3:
             printf("\nHas elegido jugar.\n");
             realizarJugada(&registros[numTiradas - 1]);
-           
+            imprimirDetallesJugada(&registros[numTiradas - 1]);
             break;
         default:
-            printf("\nOpci贸n no v谩lida. Por favor, elige una opci贸n del 1 al 3.\n");
+            printf("\nOpci髇 no v醠ida. Por favor, elige una opci髇 del 1 al 3.\n");
             break;
         }
 
@@ -122,10 +122,10 @@ void realizarJugada(struct Registro *registro)
 }
 
 void jugar(struct Registro *registro, int tipoJuego)
-/*esta funcion dirige el flujo del juego en funci贸n del tipo de juego seleccionado por el usuario.*/
+/*esta funcion dirige el flujo del juego en funci髇 del tipo de juego seleccionado por el usuario.*/
 {
     switch (tipoJuego)
-   /* este switch el tipo de juego seleccionado por el usuario pale, tripleta o n煤mero*/
+   /* este switch el tipo de juego seleccionado por el usuario pale, tripleta o n鷐ero*/
     {
     case 1:
         jugarPale(registro);
@@ -138,9 +138,9 @@ void jugar(struct Registro *registro, int tipoJuego)
         break;
     default:
         /*Si el tipoJuego no es el mismo con ninguno de los casos anteriores,
-         imprime un mensaje indicando que la opci贸n de juego no esta*/
+         imprime un mensaje indicando que la opci髇 de juego no esta*/
 
-        printf("Opci贸n de juego no v谩lida.\n");
+        printf("Opci髇 de juego no v醠ida.\n");
         break;
     }
 }
@@ -175,7 +175,7 @@ void jugarPale(struct Registro *registro)
     if (coincidencias >= 2)
     {
         registro->montoGanado = registro->cantidadApostada * 3;
-        printf("隆Felicidades! Has ganado $%d\n", registro->montoGanado);
+        printf("elicidades! Has ganado $%d\n", registro->montoGanado);
     }
     else
     {
@@ -197,7 +197,7 @@ void jugarTripleta(struct Registro *registro)
         registro->numerosAleatorios[1] == registro->numerosAleatorios[2])
     {
         registro->montoGanado = registro->cantidadApostada * 5;
-        printf("隆Felicidades! Has ganado $%d\n", registro->montoGanado);
+        printf("elicidades! Has ganado $%d\n", registro->montoGanado);
     }
     else
     {
@@ -228,7 +228,7 @@ void jugarNumero(struct Registro *registro)
     if (coincidencias > 0)
     {
         registro->montoGanado = registro->cantidadApostada * 2;
-        printf("隆Felicidades! Has ganado $%d\n", registro->montoGanado);
+        printf("elicidades! Has ganado $%d\n", registro->montoGanado);
     }
     else
     {
@@ -236,5 +236,10 @@ void jugarNumero(struct Registro *registro)
         printf("Lo siento, no has ganado esta vez.\n");
     }
 }
-
+void imprimirDetallesJugada(struct Registro *registro)
+{
+    printf("Detalles de la jugada:\n");
+    printf(" - Cantidad apostada: $%d\n", registro->cantidadApostada);
+    printf(" - Monto ganado: $%d\n", registro->montoGanado);
+}
 
