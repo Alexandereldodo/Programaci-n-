@@ -3,7 +3,7 @@
 #include <time.h>
 
 struct Registro /*crear una estructura registro de dos enteros
-                numerosaleatorios y variable de tiempo*/
+                numerosaleatorios y variableÂ deÂ tiempo*/
 
 {
     int numerosAleatorios[3];
@@ -12,7 +12,7 @@ struct Registro /*crear una estructura registro de dos enteros
 
 void imprimirNumerosConTiempo(struct Registro *registros, int numTiradas);
 void tirar(struct Registro *registros, int *numTiradas);
-/*funciones utilizadas en el programa que apuntan a la estuctura registro*/
+/*funciones utilizadas en el programa que apuntan a la estucturaÂ registro*/
 
 int main()
 {
@@ -23,8 +23,8 @@ int main()
 
     int opcion;
 
-    do  /*Inicia un bucle do que presenta un menú de opciones
-           para seleccionar.*/
+    do  /*Inicia un bucle do que presenta un menÃº de opciones
+           paraÂ seleccionar.*/
 
     {
         printf("\n0. Salir \n");
