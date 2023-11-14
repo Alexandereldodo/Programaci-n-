@@ -52,7 +52,7 @@ int main()
         case 3:
             printf("\nHas elegido jugar.\n");
             realizarJugada(&registros[numTiradas - 1]);
-
+            imprimirDetallesJugada(&registros[numTiradas - 1]);
             break;
         default:
             printf("\nOpción no válida. Por favor, elige una opción del 1 al 3.\n");
@@ -235,4 +235,10 @@ void jugarNumero(struct Registro *registro)
         registro->montoGanado = 0;
         printf("Lo siento, no has ganado esta vez.\n");
     }
+}
+void imprimirDetallesJugada(struct Registro *registro)
+{
+    printf("Detalles de la jugada:\n");
+    printf(" - Cantidad apostada: $%d\n", registro->cantidadApostada);
+    printf(" - Monto ganado: $%d\n", registro->montoGanado);
 }
