@@ -24,10 +24,10 @@ void agregarAlumno(struct alumno **alumnos, int *cantidad_alumnos)
 
     int i = (*cantidad_alumnos) - 1;
 
-    printf("\nIngrese la matrícula del nuevo alumno: ");
+    printf("\nIngrese la matrÃ­cula del nuevo alumno: ");
     scanf("%d", &(*alumnos)[i].matricula);
 
-    // Limpiar el búfer después de scanf
+    // Limpiar el bÃºfer despuÃ©s de scanf
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
 
@@ -44,7 +44,7 @@ void agregarAlumno(struct alumno **alumnos, int *cantidad_alumnos)
 
     (*alumnos)[i].direccion = (char *)malloc(50 * sizeof(char));
 
-    printf("Ingrese la dirección del nuevo alumno: ");
+    printf("Ingrese la direcciÃ³n del nuevo alumno: ");
     fgets((*alumnos)[i].direccion, 50, stdin);
     (*alumnos)[i].direccion[strcspn((*alumnos)[i].direccion, "\n")] = '\0';
 }
@@ -54,11 +54,11 @@ void mostrarDatos(struct alumno *alumnos, int cantidad_alumnos)
     printf("\nDatos de los alumnos:\n");
     for (int i = 0; i < cantidad_alumnos; i++)
     {
-        printf("Matrícula: %d\n", alumnos[i].matricula);
+        printf("MatrÃ­cula: %d\n", alumnos[i].matricula);
         printf("Nombre: %s\n", alumnos[i].nombre);
         printf("Carrera: %s\n", alumnos[i].carrera);
         printf("Promedio: %.2f\n", alumnos[i].promedio);
-        printf("Dirección: %s\n", alumnos[i].direccion);
+        printf("DirecciÃ³n: %s\n", alumnos[i].direccion);
         printf("\n");
     }
 }
@@ -94,7 +94,7 @@ int main(void)
     {
         agregarAlumno(&alumnos, &cantidad_alumnos);
 
-        printf("\n¿Desea agregar otro alumno? (s/n): ");
+        printf("\nÂ¿Desea agregar otro alumno? (s/n): ");
         scanf(" %c", &opcion);
 
     } while (opcion == 's' || opcion == 'S');
